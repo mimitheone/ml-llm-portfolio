@@ -1,0 +1,30 @@
+# configs/regression/linear_regression.yaml
+
+seed: 42
+
+data:
+  train: data/processed/regression_train.csv
+  valid: data/processed/regression_valid.csv
+  test:  data/processed/regression_test.csv
+
+target: "target"
+
+features:
+  - feature1
+  - feature2
+  - feature3
+
+model:
+  fit_intercept: true
+  copy_X: true
+  n_jobs: null
+  positive: false
+
+metrics:
+  - mse
+  - rmse
+  - mae
+  - r2
+
+reports:
+  dir: "reports/linear_regression_run" 

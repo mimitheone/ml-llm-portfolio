@@ -1,0 +1,28 @@
+# models/ridge_regression/configs/ridge_regression.yaml
+
+seed: 42
+
+data:
+  train: models/ridge_regression/data/train.csv
+  valid: models/ridge_regression/data/valid.csv
+  test:  models/ridge_regression/data/test.csv
+
+target: "target"
+
+features:
+  - feature1
+  - feature2
+  - feature3
+
+model:
+  # Add model-specific parameters here
+  random_state: 42
+
+metrics:
+  # Add metrics based on model type
+  - accuracy
+  - f1
+  - roc_auc
+
+reports:
+  dir: "models/ridge_regression/reports"

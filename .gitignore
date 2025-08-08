@@ -1,0 +1,49 @@
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.venv/
+env/
+venv/
+ENV/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Data files (excluding our organized model data)
+data/raw/
+data/interim/
+# data/processed/ - Now included in models/*/data/
+
+# Model artifacts (excluding our organized model files)
+# models/ - Now included for our organized structure
+*.pkl
+*.joblib
+*.pt
+
+# Logs and reports (excluding our organized model reports)
+logs/
+# reports/ - Now included in models/*/reports/
+
+# Environment variables
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE/project files
+.vscode/
+.idea/
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# Temporary files
+*.tmp
+*.temp

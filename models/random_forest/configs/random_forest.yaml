@@ -1,0 +1,30 @@
+# models/random_forest/configs/random_forest.yaml
+
+seed: 42
+
+data:
+  train: models/random_forest/data/train.csv
+  valid: models/random_forest/data/valid.csv
+  test:  models/random_forest/data/test.csv
+
+target: "target"
+
+features:
+  - feature1
+  - feature2
+  - feature3
+
+model:
+  n_estimators: 300
+  max_depth: 10
+  min_samples_split: 2
+  min_samples_leaf: 1
+  random_state: 42
+
+metrics:
+  - accuracy
+  - f1
+  - roc_auc
+
+reports:
+  dir: "models/random_forest/reports"

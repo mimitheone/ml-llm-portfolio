@@ -2,21 +2,21 @@
 Tests for core functionality
 """
 
-import pytest
-import pandas as pd
-import numpy as np
-from pathlib import Path
-import tempfile
 import os
+import sys
+import tempfile
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+import pytest
 
 # Add src to path
-import sys
-
 sys.path.append(str(Path(__file__).parent.parent / "src"))
 
-from src.core.utils import set_seed
-from src.core.io import load_csv, save_csv
-from src.core.metrics import classification_metrics, regression_metrics
+from src.core.utils import set_seed  # noqa: E402
+from src.core.io import load_csv, save_csv  # noqa: E402
+from src.core.metrics import classification_metrics, regression_metrics  # noqa: E402
 
 
 class TestUtils:
@@ -32,7 +32,11 @@ class TestIO:
         """Test save_csv and load_csv functions"""
         # Create test data
         test_data = pd.DataFrame(
-            {"feature1": [1, 2, 3], "feature2": [4, 5, 6], "target": [0, 1, 0]}
+            {
+                "feature1": [1, 2, 3],
+                "feature2": [4, 5, 6],
+                "target": [0, 1, 0],
+            }
         )
 
         # Save to temporary file

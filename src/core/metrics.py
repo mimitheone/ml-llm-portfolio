@@ -1,6 +1,13 @@
 from typing import Dict, Any
 import numpy as np
-from sklearn.metrics import accuracy_score, f1_score, roc_auc_score, mean_squared_error, mean_absolute_error, r2_score
+from sklearn.metrics import (
+    accuracy_score,
+    f1_score,
+    roc_auc_score,
+    mean_squared_error,
+    mean_absolute_error,
+    r2_score,
+)
 
 
 def classification_metrics(

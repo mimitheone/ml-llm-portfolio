@@ -6,12 +6,14 @@ import joblib
 from src.core.io import load_csv
 from src.core.metrics import classification_metrics
 
+
 def split_Xy(df: pd.DataFrame, target: str, features: list[str] | None = None):
     if features is None:
         features = [c for c in df.columns if c != target]
     X = df[features]
     y = df[target]
     return X, y
+
 
 def train_random_forest(cfg: Dict[str, Any], algo_builder, model_dir: Path):
     # Data
@@ -45,8 +47,10 @@ def train_random_forest(cfg: Dict[str, Any], algo_builder, model_dir: Path):
 
     return metrics
 
+
 def evaluate(cfg: Dict[str, Any], model_path: Path):
     import joblib
+
     df = load_csv(cfg["data"]["test"])
     target = cfg["target"]
     features = cfg.get("features")
@@ -63,8 +67,10 @@ def evaluate(cfg: Dict[str, Any], model_path: Path):
         pass
     return classification_metrics(y, y_pred, y_proba)
 
+
 def predict(cfg: Dict[str, Any], model_path: Path, input_csv: str, output_csv: str):
     import joblib
+
     in_df = load_csv(input_csv)
     features = cfg.get("features") or list(in_df.columns)
     model = joblib.load(model_path)

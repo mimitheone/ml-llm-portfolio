@@ -1,0 +1,141 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ml-llm-finance-portfolio"
+version = "0.1.0"
+description = "ML & LLM Finance Portfolio - Financial Analysis, Machine Learning & Agentic Workflows"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Milena Georgieva", email = "milenageorgieva@example.com"}
+]
+maintainers = [
+    {name = "Milena Georgieva", email = "milenageorgieva@example.com"}
+]
+keywords = ["machine-learning", "finance", "llm", "ai", "ml", "portfolio", "regression", "classification"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Financial and Insurance Industry",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "xgboost",
+    "statsmodels",
+    "matplotlib",
+    "plotly",
+    "seaborn",
+    "joblib",
+    "pyyaml",
+    "torch",
+    "torchvision",
+    "torchaudio",
+    "langchain",
+    "langgraph",
+    "llama-index",
+    "shap",
+    "lime",
+    "fastapi",
+    "uvicorn",
+    "black",
+    "flake8",
+    "pytest",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=22.0.0",
+    "flake8>=5.0.0",
+    "mypy>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/mimitheone/ml-llm-portfolio"
+Documentation = "https://github.com/mimitheone/ml-llm-portfolio#readme"
+Repository = "https://github.com/mimitheone/ml-llm-portfolio"
+"Bug Tracker" = "https://github.com/mimitheone/ml-llm-portfolio/issues"
+
+[project.scripts]
+ml-portfolio = "src.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.black]
+line-length = 88
+target-version = ['py39', 'py310', 'py311', 'py312']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "--verbose",
+    "--tb=short",
+    "--strict-markers",
+    "--disable-warnings",
+    "--cov=src",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+    "--cov-report=xml",
+]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests",
+    "unit: marks tests as unit tests",
+]
+
+[tool.coverage.run]
+source = ["src"]
+omit = [
+    "*/tests/*",
+    "*/test_*",
+    "*/__pycache__/*",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if self.debug:",
+    "if settings.DEBUG",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if 0:",
+    "if __name__ == .__main__.:",
+    "class .*\\bProtocol\\):",
+    "@(abc\\.)?abstractmethod",
+] 

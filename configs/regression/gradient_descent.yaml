@@ -1,0 +1,30 @@
+# configs/regression/gradient_descent.yaml
+
+seed: 42
+
+data:
+  train: data/processed/regression_train.csv
+  valid: data/processed/regression_valid.csv
+  test:  data/processed/regression_test.csv
+
+target: "target"
+
+features:
+  - feature1
+  - feature2
+  - feature3
+
+model:
+  learning_rate: 0.01
+  max_iterations: 1000
+  tolerance: 1e-6
+  random_state: 42
+
+metrics:
+  - mse
+  - rmse
+  - mae
+  - r2
+
+reports:
+  dir: "reports/gradient_descent_run"

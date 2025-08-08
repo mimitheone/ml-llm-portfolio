@@ -30,7 +30,7 @@ This repository contains **20 Machine Learning algorithms** implemented in Pytho
 
 ---
 
-## 🧪 Implemented ML Algorithms (20)
+## 🧪 Implemented ML Algorithms (21)
 
 ### **A. 📉 Regression**
 1. Linear Regression  
@@ -38,33 +38,34 @@ This repository contains **20 Machine Learning algorithms** implemented in Pytho
 3. Lasso Regression  
 4. Polynomial Regression  
 5. ARIMA (Time Series)
+6. Gradient Descent
 
 ### **B. 🧩 Classification**
-6. Logistic Regression  
-7. Decision Tree Classifier  
-8. Random Forest Classifier  
-9. Gradient Boosting (XGBoost)  
-10. Support Vector Machine (SVM)
+7. Logistic Regression  
+8. Decision Tree Classifier  
+9. Random Forest Classifier  
+10. Gradient Boosting (XGBoost)  
+11. Support Vector Machine (SVM)
 
 ### **C. 📊 Clustering**
-11. K-Means  
-12. DBSCAN  
-13. Hierarchical Clustering
+12. K-Means  
+13. DBSCAN  
+14. Hierarchical Clustering
 
 ### **D. 🚨 Anomaly Detection**
-14. Isolation Forest  
-15. One-Class SVM
+15. Isolation Forest  
+16. One-Class SVM
 
 ### **E. ✂️ Dimensionality Reduction**
-16. PCA  
-17. t-SNE (Visualization)
+17. PCA  
+18. t-SNE (Visualization)
 
 ### **F. 🎯 Recommendation Systems**
-18. Collaborative Filtering (Matrix Factorization)  
-19. Content-Based Filtering
+19. Collaborative Filtering (Matrix Factorization)  
+20. Content-Based Filtering
 
 ### **G. 🧠 Neural Networks**
-20. Multilayer Perceptron (MLP)
+21. Multilayer Perceptron (MLP)
 
 ---
 

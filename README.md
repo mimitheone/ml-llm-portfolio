@@ -22,10 +22,10 @@ This repository contains **20 Machine Learning algorithms** implemented in Pytho
 
 **Key features:**
 - 📈 **Forecasting** (revenues, expenses, cash flows)  
-- 🛡 **Risk & fraud detection**  
+- 🛡️ **Risk & fraud detection**  
 - 👥 **Customer segmentation**  
 - 🎯 **Recommendation systems**  
-- 🖼 **Dimensionality reduction & visualization**  
+- 🖼️ **Dimensionality reduction & visualization**  
 - 🤖 **LLM-based automated analysis & reporting** via LangChain + LangGraph + LlamaIndex
 
 ---
@@ -40,7 +40,7 @@ This repository contains **20 Machine Learning algorithms** implemented in Pytho
 5. ARIMA (Time Series)
 6. Gradient Descent
 
-### **B. 🧩 Classification**
+### **B. 🔍 Classification**
 7. Logistic Regression  
 8. Decision Tree Classifier  
 9. Random Forest Classifier  
@@ -52,11 +52,11 @@ This repository contains **20 Machine Learning algorithms** implemented in Pytho
 13. DBSCAN  
 14. Hierarchical Clustering
 
-### **D. 🚨 Anomaly Detection**
+### **D. ⚠️ Anomaly Detection**
 15. Isolation Forest  
 16. One-Class SVM
 
-### **E. ✂️ Dimensionality Reduction**
+### **E. 🔧 Dimensionality Reduction**
 17. PCA  
 18. t-SNE (Visualization)
 
@@ -71,14 +71,14 @@ This repository contains **20 Machine Learning algorithms** implemented in Pytho
 
 ## 🧩 LLM Agentic Workflows
 The project also integrates **Large Language Models** for:
-- 🗣 **Natural language analysis** of ML outputs  
+- 🗣️ **Natural language analysis** of ML outputs  
 - 📝 **Automated executive reports** for financial stakeholders  
 - 🔍 **Interactive agent systems** that query and interpret structured data  
 - 📚 **Data retrieval & enrichment** via LlamaIndex and RAG techniques
 
 ---
 
-## 🗂️ Project Structure
+## 📁 Project Structure
 ```text
 .
 ├─ configs/

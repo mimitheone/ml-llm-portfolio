@@ -1,0 +1,50 @@
+# .codecov.yml
+coverage:
+  precision: 2
+  round: down
+  range: "80...100"
+  status:
+    project:
+      default:
+        target: 80%
+        threshold: 5%
+        base: auto
+    patch:
+      default:
+        target: 80%
+        threshold: 5%
+        base: auto
+
+comment:
+  layout: "reach,diff,flags,files,footer"
+  behavior: default
+  require_changes: false
+
+ignore:
+  - "tests/"
+  - "docs/"
+  - "*.pyc"
+  - "*.pyo"
+  - "*.pyd"
+  - "__pycache__"
+  - "*.egg"
+  - "*.egg-info/"
+  - "dist/"
+  - "build/"
+  - "venv/"
+  - "env/"
+  - ".venv/"
+  - ".env/"
+
+parsers:
+  gcov:
+    branch_detection:
+      conditional: yes
+      loop: yes
+      method: no
+      macro: no
+
+codecov:
+  require_ci_to_pass: yes
+  notify:
+    wait_for_ci: yes

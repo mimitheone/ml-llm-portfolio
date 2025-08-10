@@ -2,11 +2,23 @@
 
 [![Python](https://img.shields.io/badge/python-3.11%20%7C%203.12-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![CI/CD](https://github.com/mimitheone/ml-llm-portfolio/workflows/Python%20CI/badge.svg)](https://github.com/mimitheone/ml-llm-portfolio/actions)
+
+## 🚦 **Status & Quality**
+[![GitHub Actions](https://github.com/mimitheone/ml-llm-portfolio/workflows/Python%20CI/badge.svg)](https://github.com/mimitheone/ml-llm-portfolio/actions/workflows/ci.yml)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/mimitheone/ml-llm-portfolio/ci.yml?branch=main&label=CI/CD)](https://github.com/mimitheone/ml-llm-portfolio/actions/workflows/ci.yml)
+[![Codecov](https://codecov.io/gh/mimitheone/ml-llm-portfolio/branch/main/graph/badge.svg)](https://codecov.io/gh/mimitheone/ml-llm-portfolio)
+[![Coverage](https://img.shields.io/badge/coverage-80%25+-brightgreen.svg)](https://codecov.io/gh/mimitheone/ml-llm-portfolio)
+
+## 🛠️ **Tools & Standards**
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Linting: flake8](https://img.shields.io/badge/linting-flake8-yellowgreen)](https://flake8.pycqa.org/)
 [![Testing: pytest](https://img.shields.io/badge/testing-pytest-blue.svg)](https://docs.pytest.org/)
-[![Coverage](https://img.shields.io/badge/coverage-90%25-brightgreen.svg)](https://github.com/mimitheone/ml-llm-portfolio)
+
+## 📊 **Repository Info**
+[![Last Commit](https://img.shields.io/github/last-commit/mimitheone/ml-llm-portfolio)](https://github.com/mimitheone/ml-llm-portfolio/commits/main)
+[![Repository Size](https://img.shields.io/github/repo-size/mimitheone/ml-llm-portfolio)](https://github.com/mimitheone/ml-llm-portfolio)
+[![Issues](https://img.shields.io/github/issues/mimitheone/ml-llm-portfolio)](https://github.com/mimitheone/ml-llm-portfolio/issues)
+[![Pull Requests](https://img.shields.io/github/issues-pr/mimitheone/ml-llm-portfolio)](https://github.com/mimitheone/ml-llm-portfolio/pulls)
 
 ## 🚀 About Me
 I am a results-driven technology leader with **15+ years in IT** and **8+ years in management**, known for **strong leadership, strategic thinking, and mentoring talent**.  

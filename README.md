@@ -90,6 +90,44 @@ The project also integrates **Large Language Models** for:
 
 ---
 
+## 🏦 **Banking Use-Cases & KPIs**
+
+This portfolio demonstrates **real-world banking applications** with industry-standard metrics and regulatory compliance:
+
+| **Category** | **Key Metrics** | **ML/LLM Applications** |
+|--------------|-----------------|-------------------------|
+| **🛡️ Risk Management** | PD/LGD/EAD, NPL ratio, VaR, Stress tests | Credit scoring, portfolio risk modeling, stress testing automation |
+| **📈 Performance** | ROTE, NIM, Cost-to-Income, Fee income | Revenue forecasting, cost optimization, profitability analysis |
+| **💧 Liquidity** | LCR/NSFR, Cash gap analysis | Liquidity forecasting, ALM optimization, regulatory reporting |
+| **🌱 ESG/Compliance** | ESG score, Explainability (SHAP), EU AI Act mapping | Risk category classification, data governance, transparency reporting |
+
+### 🤖 **LLM Agent Example: KPI Analysis**
+
+```python
+# Example: Ask the agent to explain a KPI movement
+from src.llm_agents.report_agent import analyze_metrics
+
+# Analyze banking KPIs with SHAP explanations
+analysis = analyze_metrics(
+    kpis={
+        "ROTE": 0.111, 
+        "NIM": 0.027,
+        "Cost-to-Income": 0.58,
+        "NPL_Ratio": 0.023
+    }, 
+    shap_summary="Feature 'GDP_growth' contributed +0.8% to ROTE prediction",
+    market_context="Q3 2024 - Economic recovery phase"
+)
+
+print(analysis[:600])
+# Output: "ROTE increased to 11.1% (+0.8% from Q2) driven by GDP growth 
+#         recovery and improved credit quality. NIM compression to 2.7% reflects 
+#         competitive pricing environment. Cost-to-Income ratio at 58% shows 
+#         operational efficiency gains..."
+```
+
+---
+
 ## 📁 Project Structure
 ```text
 .

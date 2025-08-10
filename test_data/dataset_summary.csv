@@ -1,0 +1,9 @@
+Dataset,Records,Use Cases
+Credit Risk Data,1000,"Credit scoring, default prediction, rating classification"
+Transaction Data,2000,"Fraud detection, anomaly detection, transaction monitoring"
+Market Data,500,"Revenue forecasting, cash flow prediction, economic modeling"
+Customer Segmentation,1500,"Customer segmentation, churn prediction, behavioral analysis"
+Portfolio Data,300,"Portfolio risk management, asset allocation, VaR calculation"
+Recommendation Interactions,978,"Product recommendations, collaborative filtering"
+Recommendation Products,50,Product features for content-based filtering
+Recommendation Users,100,User profiles for personalization

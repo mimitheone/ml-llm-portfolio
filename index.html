@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏦 Banking AI Platform - ML Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            margin-bottom: 30px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .model-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .model-card:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+        }
+
+        .model-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .model-description {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .model-use-cases {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .data-section {
+            margin-top: 20px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .data-table th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+
+        .data-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin: 2px;
+        }
+
+        .badge-regression { background: #e3f2fd; color: #1976d2; }
+        .badge-classification { background: #f3e5f5; color: #7b1fa2; }
+        .badge-clustering { background: #e8f5e8; color: #388e3c; }
+        .badge-anomaly { background: #fff3e0; color: #f57c00; }
+        .badge-dimension { background: #fce4ec; color: #c2185b; }
+        .badge-recommendation { background: #e0f2f1; color: #00796b; }
+        .badge-neural { background: #f1f8e9; color: #689f38; }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .last-updated {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2rem; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .models-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏦 Banking AI Platform</h1>
+            <p>Machine Learning & LLM Portfolio for Financial Services</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">21</div>
+                <div class="stat-label">ML Algorithms</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">8</div>
+                <div class="stat-label">Test Datasets</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">6</div>
+                <div class="stat-label">ML Categories</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Banking Focused</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🤖 Machine Learning Models</h2>
+            <div class="models-grid">
+                <div class="model-card">
+                    <div class="model-name">Linear Regression</div>
+                    <div class="model-description">Predict credit risk scores and loan amounts</div>
+                    <div class="model-use-cases">
+                        <span class="badge badge-regression">Regression</span>
+                        Credit scoring, Revenue forecasting
+                    </div>
+                </div>
+
+                <div class="model-card">
+                    <div class="model-name">Random Forest</div>
+                    <div class="model-description">Classify loan defaults and fraud detection</div>
+                    <div class="model-use-cases">
+                        <span class="badge badge-classification">Classification</span>
+                        Default prediction, Fraud detection
+                    </div>
+                </div>
+
+                <div class="model-card">
+                    <div class="model-name">Gradient Descent</div>
+                    <div class="model-description">Optimize portfolio weights and risk parameters</div>
+                    <div class="model-use-cases">
+                        <span class="badge badge-regression">Regression</span>
+                        Portfolio optimization, Risk modeling
+                    </div>
+                </div>
+
+                <div class="model-card">
+                    <div class="model-name">K-Means Clustering</div>
+                    <div class="model-description">Segment customers by behavior and risk profile</div>
+                    <div class="model-use-cases">
+                        <span class="badge badge-clustering">Clustering</span>
+                        Customer segmentation, Portfolio grouping
+                    </div>
+                </div>
+
+                <div class="model-card">
+                    <div class="model-name">Isolation Forest</div>
+                    <div class="model-description">Detect anomalous transactions and behaviors</div>
+                    <div class="model-use-cases">
+                        <span class="badge badge-anomaly">Anomaly Detection</span>
+                        Fraud detection, Risk monitoring
+                    </div>
+                </div>
+
+                <div class="model-card">
+                    <div class="model-name">PCA</div>
+                    <div class="model-description">Reduce dimensionality of financial features</div>
+                    <div class="model-use-cases">
+                        <span class="badge badge-dimension">Dimensionality</span>
+                        Feature engineering, Risk modeling
+                    </div>
+                </div>
+
+                <div class="model-card">
+                    <div class="model-name">Collaborative Filtering</div>
+                    <div class="model-description">Recommend financial products to customers</div>
+                    <div class="model-use-cases">
+                        <span class="badge badge-recommendation">Recommendation</span>
+                        Product matching, Cross-selling
+                    </div>
+                </div>
+
+                <div class="model-card">
+                    <div class="model-name">Neural Networks (MLP)</div>
+                    <div class="model-description">Complex pattern recognition in financial data</div>
+                    <div class="model-use-cases">
+                        <span class="badge badge-neural">Neural</span>
+                        Pattern recognition, Risk assessment
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📊 Test Datasets</h2>
+            <div class="data-section">
+                <div class="data-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dataset</th>
+                                <th>Records</th>
+                                <th>Use Cases</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Credit Risk Data</td>
+                                <td>1,000</td>
+                                <td>Credit scoring, Default prediction</td>
+                                <td>✅ Ready</td>
+                            </tr>
+                            <tr>
+                                <td>Transaction Data</td>
+                                <td>2,000</td>
+                                <td>Fraud detection, Anomaly detection</td>
+                                <td>✅ Ready</td>
+                            </tr>
+                            <tr>
+                                <td>Market Data</td>
+                                <td>500</td>
+                                <td>Revenue forecasting, Cash flow prediction</td>
+                                <td>✅ Ready</td>
+                            </tr>
+                            <tr>
+                                <td>Customer Segmentation</td>
+                                <td>1,500</td>
+                                <td>Customer segmentation, Churn prediction</td>
+                                <td>✅ Ready</td>
+                            </tr>
+                            <tr>
+                                <td>Portfolio Data</td>
+                                <td>300</td>
+                                <td>Portfolio risk management, VaR calculation</td>
+                                <td>✅ Ready</td>
+                            </tr>
+                            <tr>
+                                <td>Recommendation Data</td>
+                                <td>1,128</td>
+                                <td>Product recommendations, Collaborative filtering</td>
+                                <td>✅ Ready</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎯 Banking Use Cases & KPIs</h2>
+            <div class="data-section">
+                <div class="data-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Key Metrics</th>
+                                <th>ML/LLM Applications</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Risk Management</strong></td>
+                                <td>PD/LGD/EAD, NPL ratio, VaR, Stress tests</td>
+                                <td>Credit scoring, Default prediction, Risk modeling</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Performance</strong></td>
+                                <td>ROTE, NIM, Cost-to-Income, Fee income</td>
+                                <td>Revenue forecasting, Performance optimization</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Liquidity</strong></td>
+                                <td>LCR/NSFR, Cash gap analysis</td>
+                                <td>Cash flow prediction, Liquidity management</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ESG/Compliance</strong></td>
+                                <td>ESG score, Explainability (SHAP), EU AI Act</td>
+                                <td>Compliance monitoring, Risk assessment</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🚀 LLM Agent Example</h2>
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; font-family: 'Courier New', monospace;">
+                <div style="color: #667eea; margin-bottom: 10px;"><strong>Python Code Example:</strong></div>
+                <pre style="color: #333; line-height: 1.4;">
+from src.llm_agents.report_agent import analyze_metrics
+
+# Analyze banking KPIs
+analysis = analyze_metrics(
+    kpis={
+        "ROTE": 0.111, 
+        "NIM": 0.027
+    },
+    shap_summary="Credit risk model shows 23% increase in default probability"
+)
+
+print(analysis[:600])</pre>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="last-updated">
+                Last updated: <span id="last-updated"></span>
+            </div>
+            <p>🏦 Banking AI Platform - Transforming Financial Services with AI</p>
+        </div>
+    </div>
+
+    <script>
+        // Update last updated timestamp
+        document.getElementById('last-updated').textContent = new Date().toLocaleString();
+        
+        // Add some interactivity
+        document.querySelectorAll('.model-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'scale(1.02)';
+                setTimeout(() => {
+                    this.style.transform = 'translateX(5px)';
+                }, 200);
+            });
+        });
+
+        // Animate stats on scroll
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stat-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

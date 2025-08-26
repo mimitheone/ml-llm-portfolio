@@ -11,15 +11,24 @@ Imagine you want to guess how much money your piggy bank will have next week! ðŸ
 
 Then you can draw a line that shows: "If I put in 5 coins today, I'll probably have 50 coins next week!"
 
+![Piggy Bank Savings Line](docs/images/piggy_bank_regression.png)
+*Figure 1: The "magic line" showing how savings grow over time*
+
 **Real Example**: 
 - **Input**: Your age (5, 6, 7, 8 years old)
 - **Output**: Your height (100cm, 110cm, 120cm, 130cm)
 - **The Magic Line**: "For every year you get older, you grow about 10cm taller!"
 
+![Height vs Age Regression](docs/images/height_age_regression.png)
+*Figure 2: How height increases with age - a perfect straight line!*
+
 **In Banking**: 
 - **Input**: How much money someone earns each month
 - **Output**: How much they can pay back each month
 - **The Magic Line**: "If someone earns $3000, they can probably pay back $300 each month!"
+
+![Banking Income vs Payment](docs/images/banking_income_payment.png)
+*Figure 3: Banking example - how income relates to loan payments*
 
 **Why It's Useful**: 
 - It helps banks decide: "Should we give this person a loan?"

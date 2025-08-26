@@ -13,9 +13,9 @@ The model equation is:
 
 y = b₀ + b₁x₁ + b₂x₂ + ... + bₙxₙ + ε
 
-- \( \beta_0 \) → intercept (baseline prediction when all features are zero).  
-- \( \beta_i \) → coefficients showing the strength and direction of influence of each feature.  
-- \( \epsilon \) → error term (the part of \( y \) that the model cannot explain).  
+- b₀ → intercept (baseline prediction when all features are zero).  
+- bi → coefficients showing the strength and direction of influence of each feature.  
+- ε → error term (the part of y that the model cannot explain).  
 
 🎯 **What the model is trying to do:**  
 Find the values of the coefficients (\(\beta\)) so that the predictions \(\hat{y}\) are as close as possible to the actual values of \(y\).  

@@ -65,7 +65,8 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
             position: relative;
-            overflow: hidden;
+            overflow: visible;
+            min-height: 300px;
         }
 
         .phase::before {
@@ -101,14 +102,16 @@
             font-size: 1.8rem;
             font-weight: bold;
             color: #2C3E50;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            line-height: 1.2;
         }
 
         .phase-duration {
             font-size: 1rem;
             color: #7F8C8D;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             font-style: italic;
+            line-height: 1.4;
         }
 
         .algorithms {

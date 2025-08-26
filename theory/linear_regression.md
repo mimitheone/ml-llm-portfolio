@@ -4,9 +4,9 @@
 Linear Regression is one of the simplest and most widely used algorithms in Machine Learning.  
 It tries to describe how one **dependent variable** (the target) changes when one or more **independent variables** (the inputs/features) change.
 
-- \( y \) → the **dependent variable**, also called the target.  
+- **y** → the **dependent variable**, also called the target.  
   In banking: this could be the **monthly loan payment**, **customer deposit amount**, or **default risk score**.  
-- \( x_1, x_2, ..., x_n \) → the **independent variables**, also called predictors or features.  
+- **x₁, x₂, ..., xₙ** → the **independent variables**, also called predictors or features.  
   In banking: this could include **income, age, loan amount, credit score, years with the bank**, etc.  
 
 The model equation is:

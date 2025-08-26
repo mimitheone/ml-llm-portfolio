@@ -455,11 +455,6 @@ Where:
 β = (XᵀX)⁻¹Xᵀy
 ```
 
-## Next Steps
-- Use **R² score** to measure model performance (explained variance).
-- Train on larger datasets (e.g., **UCI Bank Marketing Dataset**).
-- Visualize predictions vs. actual values to check accuracy.
-
 ## Homework Assignments (Progressive Difficulty)
 
 ### Level 1: Beginner (1-2 days)

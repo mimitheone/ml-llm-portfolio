@@ -11,19 +11,21 @@ It tries to describe how one **dependent variable** (the target) changes when on
 
 The model equation is:
 
-y = b₀ + b₁x₁ + b₂x₂ + ... + bₙxₙ + ε
+```
+y = β₀ + β₁x₁ + β₂x₂ + ... + βₙxₙ + ε
+```
 
-- b₀ → intercept (baseline prediction when all features are zero).  
-- bi → coefficients showing the strength and direction of influence of each feature.  
-- ε → error term (the part of y that the model cannot explain).  
+- **β₀** → intercept (baseline prediction when all features are zero)  
+- **βᵢ** → coefficients showing the strength and direction of influence of each feature  
+- **ε** → error term (the part of y that the model cannot explain)  
 
 🎯 **What the model is trying to do:**  
-Find the values of the coefficients (\(\beta\)) so that the predictions \(\hat{y}\) are as close as possible to the actual values of \(y\).  
+Find the values of the coefficients (β) so that the predictions ŷ are as close as possible to the actual values of y.  
 This is done by minimizing the **Mean Squared Error (MSE)**:
 
-\[
-MSE = \frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2
-\]
+```
+MSE = (1/n) × Σ(yᵢ - ŷᵢ)²
+```
 
 In simple words:  
 > Linear Regression tries to draw the "best possible line (or plane)" through the data points, so that the difference between predicted and actual values is as small as possible.
@@ -39,11 +41,11 @@ y = β₀ + β₁x + ε
 ```
 
 Where:
-- `y` = target variable (dependent variable)
-- `x` = feature (independent variable)
-- `β₀` = y-intercept (bias term)
-- `β₁` = slope (coefficient)
-- `ε` = error term
+- **y** = target variable (dependent variable)
+- **x** = feature (independent variable)
+- **β₀** = y-intercept (bias term)
+- **β₁** = slope (coefficient)
+- **ε** = error term
 
 ### Multiple Linear Regression
 For multiple features:
@@ -54,18 +56,18 @@ y = β₀ + β₁x₁ + β₂x₂ + ... + βₙxₙ + ε
 ## Cost Function
 Mean Squared Error (MSE):
 ```
-J(β) = (1/2m) * Σ(h(x⁽ⁱ⁾) - y⁽ⁱ⁾)²
+J(β) = (1/2m) × Σ(h(x⁽ⁱ⁾) - y⁽ⁱ⁾)²
 ```
 
 Where:
-- `m` = number of training examples
-- `h(x⁽ⁱ⁾)` = predicted value
-- `y⁽ⁱ⁾)` = actual value
+- **m** = number of training examples
+- **h(x⁽ⁱ⁾)** = predicted value
+- **y⁽ⁱ⁾** = actual value
 
 ## Optimization
 **Ordinary Least Squares (OLS)**: Minimizes the sum of squared residuals by solving the normal equation:
 ```
-β = (X^T X)^(-1) X^T y
+β = (XᵀX)⁻¹Xᵀy
 ```
 
 ## Banking Applications
@@ -124,7 +126,7 @@ feature_importance = dict(zip(feature_names, coefficients))
 
 ## Model Evaluation
 - **R² Score**: Proportion of variance explained
-- **Mean Absolute Error (MAE)**: Average absolute difference
+- **Mean Absolute Error (MAE)**: Average absolute difference  
 - **Root Mean Squared Error (RMSE)**: Standard deviation of residuals
 - **Residual Analysis**: Check assumptions
 

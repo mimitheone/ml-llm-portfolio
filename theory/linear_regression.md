@@ -1,7 +1,36 @@
 # Linear Regression
 
 ## Overview
-Linear Regression is a fundamental supervised learning algorithm used for predicting continuous numerical values based on one or more input features.
+Linear Regression is one of the simplest and most widely used algorithms in Machine Learning.  
+It tries to describe how one **dependent variable** (the target) changes when one or more **independent variables** (the inputs/features) change.
+
+- \( y \) → the **dependent variable**, also called the target.  
+  In banking: this could be the **monthly loan payment**, **customer deposit amount**, or **default risk score**.  
+- \( x_1, x_2, ..., x_n \) → the **independent variables**, also called predictors or features.  
+  In banking: this could include **income, age, loan amount, credit score, years with the bank**, etc.  
+
+The model equation is:
+
+\[
+y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n + \epsilon
+\]
+
+- \( \beta_0 \) → intercept (baseline prediction when all features are zero).  
+- \( \beta_i \) → coefficients showing the strength and direction of influence of each feature.  
+- \( \epsilon \) → error term (the part of \( y \) that the model cannot explain).  
+
+🎯 **What the model is trying to do:**  
+Find the values of the coefficients (\(\beta\)) so that the predictions \(\hat{y}\) are as close as possible to the actual values of \(y\).  
+This is done by minimizing the **Mean Squared Error (MSE)**:
+
+\[
+MSE = \frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2
+\]
+
+In simple words:  
+> Linear Regression tries to draw the "best possible line (or plane)" through the data points, so that the difference between predicted and actual values is as small as possible.
+
+---
 
 ## Mathematical Foundation
 

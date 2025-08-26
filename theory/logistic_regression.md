@@ -157,3 +157,9 @@ J(β) = -Σ[y^(i) * log(h_β(x^(i))) + (1-y^(i)) * log(1-h_β(x^(i)))]
 - **Counterfactual Explanations**: What-if scenarios
 - **Feature Interactions**: Understand feature relationships
 - **Business Rules**: Generate interpretable rules
+
+---
+
+## 🗺️ ML Developer Roadmap
+
+Ready to continue your ML journey? Check out our comprehensive [**ML Developer Roadmap**](../../ROADMAP.md) for the complete learning path from beginner to expert! 🚀

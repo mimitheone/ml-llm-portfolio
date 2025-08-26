@@ -186,3 +186,10 @@ f(x) = sign(Σ(α_i * K(x_i, x)) - ρ)
 - **Counterfactual Analysis**: What-if scenarios for anomalies
 - **Feature Interactions**: Understand anomaly relationships
 - **Business Rules**: Generate interpretable anomaly descriptions
+
+
+---
+
+## 🗺️ ML Developer Roadmap
+
+Ready to continue your ML journey? Check out our comprehensive [**ML Developer Roadmap**](../../ROADMAP.md) for the complete learning path from beginner to expert! 🚀

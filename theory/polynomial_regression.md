@@ -134,3 +134,10 @@ Where `X` contains polynomial features: `[1, x, x², x³, ..., xⁿ]`
 - **SHAP Values**: Explain polynomial contributions
 - **Feature Importance**: Rank polynomial terms
 - **Visualization**: Plot polynomial relationships
+
+
+---
+
+## 🗺️ ML Developer Roadmap
+
+Ready to continue your ML journey? Check out our comprehensive [**ML Developer Roadmap**](../../ROADMAP.md) for the complete learning path from beginner to expert! 🚀

@@ -291,3 +291,10 @@ uᵢⱼ = 1 / Σₖ₌₁ᵏ (||xⱼ - μᵢ|| / ||xⱼ - μₖ||)^(2/(m-1))
 - **Hierarchical**: Multi-level clustering
 - **Ensemble**: Combine multiple clustering methods
 - **Quantum**: Quantum K-Means algorithms
+
+
+---
+
+## 🗺️ ML Developer Roadmap
+
+Ready to continue your ML journey? Check out our comprehensive [**ML Developer Roadmap**](../../ROADMAP.md) for the complete learning path from beginner to expert! 🚀

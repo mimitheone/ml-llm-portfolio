@@ -289,3 +289,9 @@ print(f"CV ROC AUC: {cv_scores.mean():.3f} (+/- {cv_scores.std() * 2:.3f})")
 - **Federated Learning**: Distributed training
 - **Online Learning**: Incremental updates
 - **Quantum Random Forest**: Quantum computing integration
+
+---
+
+## 🗺️ ML Developer Roadmap
+
+Ready to continue your ML journey? Check out our comprehensive [**ML Developer Roadmap**](../../ROADMAP.md) for the complete learning path from beginner to expert! 🚀

@@ -180,3 +180,10 @@ y_i * (w^T * x_i + b) ≥ 1 - ξ_i, ξ_i ≥ 0
 - **Counterfactual Explanations**: What-if scenarios
 - **Feature Interactions**: Understand feature relationships
 - **Business Rules**: Generate interpretable rules
+
+
+---
+
+## 🗺️ ML Developer Roadmap
+
+Ready to continue your ML journey? Check out our comprehensive [**ML Developer Roadmap**](../../ROADMAP.md) for the complete learning path from beginner to expert! 🚀

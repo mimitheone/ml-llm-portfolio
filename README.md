@@ -20,6 +20,20 @@
 [![Issues](https://img.shields.io/github/issues/mimitheone/ml-llm-portfolio)](https://github.com/mimitheone/ml-llm-portfolio/issues)
 [![Pull Requests](https://img.shields.io/github/issues-pr/mimitheone/ml-llm-portfolio)](https://github.com/mimitheone/ml-llm-portfolio/pulls)
 
+## 🗺️ **ML Developer Roadmap**
+
+**New!** Check out our comprehensive [**ML Developer Roadmap**](ROADMAP.md) 🚀
+
+A complete learning path from beginner to expert, including:
+- **4 Learning Phases** (Foundation → Intermediate → Advanced → Expert)
+- **Essential Tools** (Python libraries, Cloud platforms, Development skills)
+- **Real-World Applications** (Banking, E-commerce, Healthcare, Technology)
+- **Timeline & Success Metrics** (6-12 months to mastery)
+
+Perfect for anyone starting their ML journey or looking to advance their skills!
+
+---
+
 ## 🚀 About Me
 I am a results-driven technology leader with **15+ years in IT** and **8+ years in management**, known for **strong leadership, strategic thinking, and mentoring talent**.  
 I have led diverse teams, delivered mission-critical projects, and combined business insight with deep technical expertise.  

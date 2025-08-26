@@ -1,5 +1,25 @@
 # Linear Regression
 
+## Table of Contents
+1. [Simple Explanation](#simple-explanation-like-youre-5-years-old)
+2. [Overview](#overview)
+3. [Banking Applications](#banking-applications)
+4. [Example 1: Banking Dataset](#example-1-banking-dataset-monthly-payment-prediction)
+5. [Example 2: Ridge and Lasso Regression](#example-2-ridge-and-lasso-regression-regularization)
+6. [Example 3: Real-World Dataset](#example-3-real-world-dataset---german-credit-risk)
+7. [Mathematical Foundation](#mathematical-foundation)
+8. [Next Steps](#next-steps)
+9. [Common Mistakes](#common-mistakes)
+10. [Homework Assignments](#homework-assignments-progressive-difficulty)
+11. [Assumptions](#assumptions)
+12. [Advantages & Limitations](#advantages--limitations)
+13. [Model Evaluation](#model-evaluation)
+14. [Best Practices](#best-practices)
+15. [Regulatory Considerations](#regulatory-considerations)
+16. [Quick Reference](#quick-reference)
+
+---
+
 ## Simple Explanation (Like You're 5 Years Old)
 
 Imagine you want to guess how much money your piggy bank will have next week! 🐷💰
@@ -66,46 +86,6 @@ MSE = (1/n) × Σ(yᵢ - ŷᵢ)²
 
 In simple words:  
 > Linear Regression tries to draw the "best possible line (or plane)" through the data points, so that the difference between predicted and actual values is as small as possible.
-
----
-
-## Mathematical Foundation
-
-### Simple Linear Regression
-For a single feature:
-```
-y = β₀ + β₁x + ε
-```
-
-Where:
-- **y** = target variable (dependent variable)
-- **x** = feature (independent variable)
-- **β₀** = y-intercept (bias term)
-- **β₁** = slope (coefficient)
-- **ε** = error term
-
-### Multiple Linear Regression
-For multiple features:
-```
-y = β₀ + β₁x₁ + β₂x₂ + ... + βₙxₙ + ε
-```
-
-## Cost Function
-Mean Squared Error (MSE):
-```
-J(β) = (1/2m) × Σ(h(x⁽ⁱ⁾) - y⁽ⁱ⁾)²
-```
-
-Where:
-- **m** = number of training examples
-- **h(x⁽ⁱ⁾)** = predicted value
-- **y⁽ⁱ⁾** = actual value
-
-## Optimization
-**Ordinary Least Squares (OLS)**: Minimizes the sum of squared residuals by solving the normal equation:
-```
-β = (XᵀX)⁻¹Xᵀy
-```
 
 ## Banking Applications
 
@@ -437,10 +417,143 @@ Top 5 Most Important Features:
 - **Feature Engineering**: Raw features may need domain-specific transformations
 - **Temporal Effects**: Economic conditions change over time
 
+## Mathematical Foundation
+
+### Simple Linear Regression
+For a single feature:
+```
+y = β₀ + β₁x + ε
+```
+
+Where:
+- **y** = target variable (dependent variable)
+- **x** = feature (independent variable)
+- **β₀** = y-intercept (bias term)
+- **β₁** = slope (coefficient)
+- **ε** = error term
+
+### Multiple Linear Regression
+For multiple features:
+```
+y = β₀ + β₁x₁ + β₂x₂ + ... + βₙxₙ + ε
+```
+
+## Cost Function
+Mean Squared Error (MSE):
+```
+J(β) = (1/2m) × Σ(h(x⁽ⁱ⁾) - y⁽ⁱ⁾)²
+```
+
+Where:
+- **m** = number of training examples
+- **h(x⁽ⁱ⁾)** = predicted value
+- **y⁽ⁱ⁾** = actual value
+
+## Optimization
+**Ordinary Least Squares (OLS)**: Minimizes the sum of squared residuals by solving the normal equation:
+```
+β = (XᵀX)⁻¹Xᵀy
+```
+
 ## Next Steps
 - Use **R² score** to measure model performance (explained variance).
 - Train on larger datasets (e.g., **UCI Bank Marketing Dataset**).
 - Visualize predictions vs. actual values to check accuracy.
+
+## Homework Assignments (Progressive Difficulty)
+
+### Level 1: Beginner (1-2 days)
+**Assignment 1**: Create your first linear regression model
+- Use the banking dataset from Example 1
+- Predict monthly payments for 5 new clients
+- Calculate R² score and interpret the results
+
+**Assignment 2**: Visualize your results
+- Create scatter plots of predictions vs actual values
+- Plot residual errors to check model assumptions
+- Use matplotlib to make professional-looking charts
+
+### Level 2: Intermediate (3-5 days)
+**Assignment 3**: Feature engineering
+- Add new features: income/age ratio, loan-to-income ratio
+- Compare model performance before and after feature engineering
+- Use correlation matrix to identify multicollinearity
+
+**Assignment 4**: Cross-validation and model selection
+- Implement 5-fold cross-validation
+- Compare Linear, Ridge, and Lasso regression
+- Create a model comparison table with metrics
+
+**Assignment 5**: Real dataset exploration
+- Download the German Credit dataset from Kaggle
+- Clean and preprocess the data (handle missing values, encode categories)
+- Create a regression target from the classification problem
+
+### Level 3: Advanced (1-2 weeks)
+**Assignment 6**: Advanced preprocessing pipeline
+- Build a complete preprocessing pipeline with sklearn Pipeline
+- Implement custom transformers for feature engineering
+- Add feature selection using statistical tests
+
+**Assignment 7**: Hyperparameter optimization
+- Use GridSearchCV and RandomizedSearchCV for Ridge/Lasso
+- Implement Bayesian optimization with scikit-optimize
+- Create learning curves to analyze bias-variance tradeoff
+
+**Assignment 8**: Model interpretation and explainability
+- Calculate feature importance using coefficients
+- Implement SHAP values for model explanation
+- Create partial dependence plots for key features
+
+### Level 4: Expert (2-3 weeks)
+**Assignment 9**: Production-ready model
+- Build a complete ML pipeline with proper error handling
+- Implement model versioning and logging
+- Create unit tests for your model and preprocessing
+- Deploy model as a REST API using Flask/FastAPI
+
+**Assignment 10**: Advanced regression techniques
+- Implement polynomial regression and compare with linear
+- Build ensemble models combining multiple regression algorithms
+- Create a comprehensive model validation framework
+- Write a detailed technical report with business recommendations
+
+### Bonus Challenge (1 month)
+**Final Project**: End-to-end ML system
+- Choose a real-world regression problem (house prices, stock prediction, etc.)
+- Collect and clean your own dataset
+- Build a complete ML system with monitoring and retraining
+- Create a web application for model predictions
+- Document everything and present your findings
+
+## Common Mistakes
+
+### ❌ Data Preprocessing Errors
+- **Forgetting to scale features**: Linear regression is sensitive to feature scales
+- **Not handling missing values**: Can lead to biased results
+- **Ignoring outliers**: Can significantly skew the regression line
+
+### ❌ Model Assumptions Violations
+- **Non-linear relationships**: Using linear regression for clearly non-linear data
+- **Multicollinearity**: Highly correlated features can cause unstable coefficients
+- **Heteroscedasticity**: Non-constant variance in residuals
+
+### ❌ Evaluation Mistakes
+- **Overfitting on training data**: Not using proper train/test splits
+- **Ignoring residual analysis**: Not checking if assumptions are met
+- **Focusing only on R²**: R² can be misleading with small datasets
+
+### ❌ Business Logic Errors
+- **Causation vs Correlation**: Assuming linear relationships imply causation
+- **Extrapolation**: Making predictions outside the training data range
+- **Feature interpretation**: Misinterpreting coefficient signs and magnitudes
+
+### ✅ How to Avoid These Mistakes
+- Always visualize your data before modeling
+- Use cross-validation for robust evaluation
+- Check residual plots for assumption violations
+- Scale your features appropriately
+- Validate business logic with domain experts
 
 ## Assumptions
 1. **Linearity**: Relationship between features and target is linear
@@ -449,17 +562,23 @@ Top 5 Most Important Features:
 4. **Normality**: Residuals are normally distributed
 5. **No Multicollinearity**: Features are not highly correlated
 
-## Advantages
-- ✅ Simple and interpretable
-- ✅ Fast training and prediction
-- ✅ Provides coefficient importance
-- ✅ Works well with small datasets
+## Advantages & Limitations
 
-## Limitations
-- ❌ Assumes linear relationships
-- ❌ Sensitive to outliers
-- ❌ Cannot capture complex patterns
-- ❌ Requires feature scaling
+### ✅ Advantages
+- **Simple and interpretable**: Easy to understand and explain to stakeholders
+- **Fast training and prediction**: Computationally efficient
+- **Provides coefficient importance**: Clear feature impact interpretation
+- **Works well with small datasets**: Doesn't require large amounts of data
+- **No hyperparameters**: Simple to implement without tuning
+- **Baseline model**: Good starting point for comparison
+
+### ❌ Limitations
+- **Assumes linear relationships**: Cannot capture non-linear patterns
+- **Sensitive to outliers**: Extreme values can skew results significantly
+- **Cannot capture complex patterns**: Limited to linear feature interactions
+- **Requires feature scaling**: Performance depends on feature normalization
+- **Multicollinearity issues**: Correlated features cause unstable coefficients
+- **Overfitting risk**: Can memorize training data without regularization
 
 ## Model Evaluation
 - **R² Score**: Proportion of variance explained
@@ -479,3 +598,42 @@ Top 5 Most Important Features:
 - **Basel III**: Risk model validation requirements
 - **GDPR**: Explainable AI requirements
 - **Model Governance**: Document assumptions and limitations
+
+## Quick Reference
+
+### Key Formulas
+```
+Linear Regression: y = β₀ + β₁x₁ + β₂x₂ + ... + βₙxₙ + ε
+MSE: J(β) = (1/2m) × Σ(h(x⁽ⁱ⁾) - y⁽ⁱ⁾)²
+OLS Solution: β = (XᵀX)⁻¹Xᵀy
+R² Score: R² = 1 - (SS_res / SS_tot)
+```
+
+### Scikit-Learn Implementation
+```python
+from sklearn.linear_model import LinearRegression, Ridge, Lasso
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import r2_score, mean_squared_error
+
+# Basic usage
+model = LinearRegression()
+model.fit(X, y)
+predictions = model.predict(X_test)
+r2 = r2_score(y_test, predictions)
+```
+
+### Key Metrics
+- **R²**: 0-1, higher is better (proportion of variance explained)
+- **RMSE**: Lower is better (same units as target)
+- **MAE**: Lower is better (average absolute error)
+- **Residuals**: Should be normally distributed with constant variance
+
+### When to Use Linear Regression
+✅ **Good for**: Linear relationships, interpretability, small datasets, baseline models
+❌ **Avoid when**: Non-linear patterns, complex interactions, high-dimensional data
+
+---
+
+## 🗺️ ML Developer Roadmap
+
+Ready to continue your ML journey? Check out our comprehensive [**ML Developer Roadmap**](../../ROADMAP.md) for the complete learning path from beginner to expert! 🚀

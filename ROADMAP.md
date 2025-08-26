@@ -197,11 +197,3 @@
 - [ ] Published research or open-source contributions
 
 ---
-
-## Next Steps
-
-Ready to start your ML journey? Begin with our [Linear Regression Guide](theory/linear_regression.md) and work through the examples step by step!
-
-**Remember**: The key to mastering ML is consistent practice and real-world application. Don't just read - build, experiment, and learn from your mistakes.
-
-Happy learning! 🎯

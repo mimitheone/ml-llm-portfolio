@@ -2,6 +2,12 @@
 
 ## Complete Learning Path: From Beginner to Expert
 
+### 🎨 Interactive Roadmap
+**Click here for the interactive version**: [**Interactive ML Developer Roadmap**](docs/ml_roadmap.html) 🚀
+
+*Beautiful, zoomable, and interactive roadmap with hover effects and animations*
+
+### 📊 Static Version
 <img src="docs/images/ml_developer_roadmap.png" alt="ML Developer Roadmap" width="800" height="600">
 
 *Complete ML Developer Learning Path - From Beginner to Expert*

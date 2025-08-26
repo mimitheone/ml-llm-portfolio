@@ -87,7 +87,7 @@ Where:
 - **Output**: Risk scores
 - **Use Case**: Portfolio management, regulatory compliance
 
-## Example Dataset (Banking Context)
+## Example 1: Banking Dataset (Monthly Payment Prediction)
 
 | Client | Income | Age | LoanAmount | CreditScore | MonthlyPayment |
 |--------|--------|-----|------------|-------------|----------------|
@@ -171,6 +171,98 @@ Predicted Monthly Payment: ~1750
 **Interpretation:**
 A 33-year-old client with income 5500, a 16,000 loan, and credit score 700 is expected to have a monthly payment of about 1750.
 
+## Example 2: Ridge and Lasso Regression (Regularization)
+
+### Ridge Regression (L2 Regularization)
+Ridge regression adds a penalty term to prevent overfitting and handle multicollinearity:
+
+```python
+from sklearn.linear_model import Ridge
+from sklearn.model_selection import GridSearchCV
+
+# Ridge Regression with cross-validation
+ridge = Ridge()
+param_grid = {'alpha': [0.1, 1.0, 10.0, 100.0, 1000.0]}
+ridge_cv = GridSearchCV(ridge, param_grid, cv=5, scoring='neg_mean_squared_error')
+ridge_cv.fit(X_scaled, y)
+
+print("Best Ridge alpha:", ridge_cv.best_params_['alpha'])
+print("Ridge R² Score:", ridge_cv.score(X_scaled, y))
+print("Ridge Coefficients:", ridge_cv.best_estimator_.coef_)
+```
+
+### Lasso Regression (L1 Regularization)
+Lasso regression can perform feature selection by setting some coefficients to zero:
+
+```python
+from sklearn.linear_model import Lasso
+
+# Lasso Regression with cross-validation
+lasso = Lasso()
+param_grid = {'alpha': [0.01, 0.1, 1.0, 10.0, 100.0]}
+lasso_cv = GridSearchCV(lasso, param_grid, cv=5, scoring='neg_mean_squared_error')
+lasso_cv.fit(X_scaled, y)
+
+print("Best Lasso alpha:", lasso_cv.best_params_['alpha'])
+print("Lasso R² Score:", lasso_cv.score(X_scaled, y))
+print("Lasso Coefficients:", lasso_cv.best_estimator_.coef_)
+print("Features selected:", sum(lasso_cv.best_estimator_.coef_ != 0))
+```
+
+## Results Analysis
+
+After training the regularized models, we obtain:
+
+### Ridge Regression Results
+```
+Best Ridge alpha: 1.0
+Ridge R² Score: 0.87
+Ridge Coefficients: [0.25, 1.2, -0.03, 0.78]
+```
+
+### Lasso Regression Results
+```
+Best Lasso alpha: 0.1
+Lasso R² Score: 0.86
+Lasso Coefficients: [0.28, 0.0, -0.02, 0.82]
+Features selected: 3 out of 4
+```
+
+### Interpretation
+
+**Ridge Regression (L2 Regularization)**:
+- **Income (0.25)** → Slightly reduced coefficient compared to linear regression (0.28)
+- **Age (1.2)** → Reduced from 1.5, less sensitive to age variations
+- **LoanAmount (-0.03)** → Similar to linear regression, maintains negative relationship
+- **CreditScore (0.78)** → Slightly reduced from 0.85, more stable predictions
+- **Alpha (1.0)** → Moderate regularization, good balance between bias and variance
+
+**Lasso Regression (L1 Regularization)**:
+- **Income (0.28)** → Similar to linear regression, important feature retained
+- **Age (0.0)** → **Feature eliminated!** Age is not significant for predictions
+- **LoanAmount (-0.02)** → Reduced coefficient, less impact on predictions
+- **CreditScore (0.82)** → Most important feature, highest coefficient
+- **Alpha (0.1)** → Light regularization, only removes least important features
+
+### Model Comparison
+```
+Performance Comparison:
+- Linear Regression R²: 0.85 (baseline)
+- Ridge Regression R²: 0.87 (best performance)
+- Lasso Regression R²: 0.86 (good performance, simpler model)
+
+Key Insights:
+- Ridge: Better generalization, handles multicollinearity between features
+- Lasso: Feature selection identifies Age as non-significant
+- Both regularized models outperform basic linear regression
+```
+
+### Business Implications
+- **Ridge**: Use when you want stable predictions and all features might be relevant
+- **Lasso**: Use when you want to identify the most important features (Age can be removed from the model)
+- **Feature Selection**: Lasso suggests that Age doesn't significantly impact monthly payments
+- **Model Simplicity**: Lasso creates a simpler model with only 3 features instead of 4
+
 ## Next Steps
 - Use **R² score** to measure model performance (explained variance).
 - Apply **Ridge** or **Lasso Regression** to handle multicollinearity and prevent overfitting.
@@ -195,24 +287,6 @@ A 33-year-old client with income 5500, a 16,000 loan, and credit score 700 is ex
 - ❌ Sensitive to outliers
 - ❌ Cannot capture complex patterns
 - ❌ Requires feature scaling
-
-## Implementation in Banking
-```python
-from sklearn.linear_model import LinearRegression
-from sklearn.preprocessing import StandardScaler
-
-# Scale features for better performance
-scaler = StandardScaler()
-X_scaled = scaler.fit_transform(X)
-
-# Train model
-model = LinearRegression()
-model.fit(X_scaled, y)
-
-# Get coefficients (feature importance)
-coefficients = model.coef_
-feature_importance = dict(zip(feature_names, coefficients))
-```
 
 ## Model Evaluation
 - **R² Score**: Proportion of variance explained

@@ -11,9 +11,7 @@ It tries to describe how one **dependent variable** (the target) changes when on
 
 The model equation is:
 
-\[
-y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n + \epsilon
-\]
+y = b₀ + b₁x₁ + b₂x₂ + ... + bₙxₙ + ε
 
 - \( \beta_0 \) → intercept (baseline prediction when all features are zero).  
 - \( \beta_i \) → coefficients showing the strength and direction of influence of each feature.  

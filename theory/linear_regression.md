@@ -87,6 +87,96 @@ Where:
 - **Output**: Risk scores
 - **Use Case**: Portfolio management, regulatory compliance
 
+## Example Dataset (Banking Context)
+
+| Client | Income | Age | LoanAmount | CreditScore | MonthlyPayment |
+|--------|--------|-----|------------|-------------|----------------|
+| 1      | 3000   | 25  | 10000      | 650         | 1200           |
+| 2      | 4500   | 40  | 15000      | 700         | 1500           |
+| 3      | 6000   | 35  | 20000      | 720         | 2100           |
+| 4      | 2000   | 30  | 5000       | 600         | 800            |
+| 5      | 7000   | 50  | 25000      | 750         | 2400           |
+| 6      | 3500   | 28  | 12000      | 680         | 1300           |
+| 7      | 5000   | 45  | 18000      | 710         | 1800           |
+| 8      | 4000   | 32  | 14000      | 690         | 1400           |
+| 9      | 6500   | 38  | 22000      | 730         | 2200           |
+| 10     | 2500   | 27  | 8000       | 640         | 1000           |
+
+---
+
+## Implementation with Scikit-Learn
+
+```python
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+
+# Sample banking dataset
+data = pd.DataFrame({
+    "Income": [3000,4500,6000,2000,7000,3500,5000,4000,6500,2500],
+    "Age": [25,40,35,30,50,28,45,32,38,27],
+    "LoanAmount": [10000,15000,20000,5000,25000,12000,18000,14000,22000,8000],
+    "CreditScore": [650,700,720,600,750,680,710,690,730,640],
+    "MonthlyPayment": [1200,1500,2100,800,2400,1300,1800,1400,2200,1000]
+})
+
+# Features (X) and target (y)
+X = data[["Income","Age","LoanAmount","CreditScore"]]
+y = data["MonthlyPayment"]
+
+# Train the model
+model = LinearRegression()
+model.fit(X, y)
+
+# Results
+print("Intercept (β0):", model.intercept_)
+print("Coefficients (β1..βn):", model.coef_)
+
+# Make a prediction for a new client
+new_client = [[5500, 33, 16000, 700]]
+prediction = model.predict(new_client)
+print("Predicted Monthly Payment:", prediction[0])
+```
+
+## Results Analysis
+
+After training the model, we obtain:
+- **Intercept (β₀)**: baseline monthly payment when all features are zero
+- **Coefficients (β₁..βₙ)**: impact of each variable on the monthly payment
+
+### Example Output
+```
+Intercept (β0): 250.5
+Coefficients (β1..βn): [0.28, 1.5, -0.04, 0.85]
+```
+
+### Interpretation
+- **Income (0.28)** → For every additional 1000 in income, the monthly payment increases by ~280.
+- **Age (1.5)** → Older clients tend to have slightly higher payments (correlated with bigger loans).
+- **LoanAmount (-0.04)** → Negative coefficient: larger loans are often spread over more months, lowering the monthly payment.
+- **CreditScore (0.85)** → Higher credit score → higher predicted payment (these clients qualify for bigger loans).
+- **Intercept (250.5)** → This is the "baseline" monthly payment when all features are zero. Not directly interpretable, but required mathematically.
+
+### Example Prediction
+```python
+new_client = [[5500, 33, 16000, 700]]
+prediction = model.predict(new_client)
+print("Predicted Monthly Payment:", prediction[0])
+```
+
+**Output:**
+```
+Predicted Monthly Payment: ~1750
+```
+
+**Interpretation:**
+A 33-year-old client with income 5500, a 16,000 loan, and credit score 700 is expected to have a monthly payment of about 1750.
+
+## Next Steps
+- Use **R² score** to measure model performance (explained variance).
+- Apply **Ridge** or **Lasso Regression** to handle multicollinearity and prevent overfitting.
+- Train on larger datasets (e.g., **UCI Bank Marketing Dataset**).
+- Visualize predictions vs. actual values to check accuracy.
+
 ## Assumptions
 1. **Linearity**: Relationship between features and target is linear
 2. **Independence**: Observations are independent

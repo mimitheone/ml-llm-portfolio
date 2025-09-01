@@ -56,7 +56,7 @@ This repository contains **20 Machine Learning algorithms** implemented in Pytho
 
 ---
 
-## 🧪 Implemented ML Algorithms (21)
+## 🧪 Implemented ML Algorithms (22)
 
 ### **A. 📉 Regression**
 1. Linear Regression  
@@ -92,6 +92,9 @@ This repository contains **20 Machine Learning algorithms** implemented in Pytho
 
 ### **G. 🧠 Neural Networks**
 21. Multilayer Perceptron (MLP)
+
+### **H. 🎲 Simulation & Risk Analysis**
+22. Monte Carlo Simulations
 
 ---
 

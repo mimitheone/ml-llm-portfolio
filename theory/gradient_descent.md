@@ -245,7 +245,7 @@ t > max_iterations
 - **Meta-Learning**: Learn to optimize
 - **Neural Architecture Search**: Automated model design
 
-
+Probably the best explanantion of Gradient descent: https://www.youtube.com/watch?v=TYLyAfFn_ME
 ---
 
 ## 🗺️ ML Developer Roadmap

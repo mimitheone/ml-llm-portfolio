@@ -17,6 +17,7 @@ torchaudio
 
 # LLM & Agents
 langchain
+langchain-openai
 langgraph
 llama-index
 

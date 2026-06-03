@@ -2,6 +2,8 @@ from dataclasses import dataclass
 from typing import Any, Dict
 from sklearn.ensemble import RandomForestClassifier
 
+TASK = "classification"
+
 
 @dataclass
 class RandomForestConfig:

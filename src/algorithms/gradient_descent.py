@@ -3,6 +3,8 @@ from typing import Any, Dict, List
 import numpy as np
 from sklearn.base import BaseEstimator, RegressorMixin
 
+TASK = "regression"
+
 
 @dataclass
 class GradientDescentConfig:

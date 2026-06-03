@@ -2,6 +2,8 @@ from dataclasses import dataclass
 from typing import Any, Dict
 from sklearn.linear_model import LinearRegression
 
+TASK = "regression"
+
 
 @dataclass
 class LinearRegressionConfig:
